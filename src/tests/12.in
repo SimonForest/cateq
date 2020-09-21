@@ -1,0 +1,10 @@
+x,y,z := gen *
+a,b,c := gen x -> y
+d,e,f := gen y -> z
+al,alp := gen a -> b
+be,bep := gen b -> c
+ga,gap := gen d -> e
+de,dep := gen e -> f
+A := gen al *0 de -> alp *0 dep
+B := gen be *0 ga -> bep *0 gap
+{ be, A, ga } *2 { alp, B, dep } = { al, B, de } *2 { bep, A, gap } % false

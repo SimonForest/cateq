@@ -1,0 +1,9 @@
+w,x,y,z := gen *
+f,f' := gen w -> x
+g := gen x -> y
+h,h' := gen y -> z
+al,al' := gen f -> f'
+be,be' := gen h -> h'
+A := gen { al, g, be } -> { al', g, be' }
+A = A
+{ A } = { A } % error because not representable by pasting diagrams

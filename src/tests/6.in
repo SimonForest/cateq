@@ -1,0 +1,14 @@
+x := gen *
+al := gen id1 x -> id1 x
+be := gen id1 x -> id1 x
+ga := gen id1 x -> id1 x
+de := gen id1 x -> id1 x
+al *0 be *0 ga *0 de = de *1 be *0 ga *0 al % true
+al *0 be *0 ga *0 de = de *1 be *0 ga *0 al *0 al % false
+al *0 be *0 ga *0 de = de *1 be *0 al *0 al % false
+A := gen al -> be
+B := gen al -> be
+C := gen be -> ga
+D := gen be -> ga
+(A *0 B) *2 (C *0 D) = (A *2 D) *0 (B *2 C) % true
+(A *0 B) *2 (C *0 D) = (A *2 D) *0 (B *2 D) % false

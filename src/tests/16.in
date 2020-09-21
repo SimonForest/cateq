@@ -1,0 +1,5 @@
+x := gen *
+f := gen x -> x
+al := gen id1 x -> id1 x
+A := gen id2 x -> id2 x
+(f *0 A) *0 (id2 al) = al *0 f *0 A % false

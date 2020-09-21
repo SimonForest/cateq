@@ -1,0 +1,4 @@
+x := gen *
+alpha := gen id1 x -> id1 x
+beta := gen id1 x -> id1 x
+alpha *0 beta = beta *0 alpha % true

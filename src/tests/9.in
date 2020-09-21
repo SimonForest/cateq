@@ -1,0 +1,6 @@
+x := gen *
+y := gen *
+z := gen *
+f := gen x -> y
+g := gen y -> z
+{ f , g } = f % false

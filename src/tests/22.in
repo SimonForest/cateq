@@ -1,0 +1,16 @@
+% Counter example to inclusion of adc into tfc
+w,x,y,z := gen *
+a,b,c := gen w -> x
+d,e,f := gen x -> y
+g,h,i := gen y -> z
+al,al' := gen a -> b
+be,be' := gen b -> c
+ga,ga' := gen d -> e
+ga'' := gen d -> f
+de,de' := gen e -> f
+ep,ep' := gen g -> h
+ze,ze' := gen h -> i
+A := gen { be, ga } -> { be', ga' }
+B := gen { de, ep } -> { de', ep' }
+C := gen { al, ga', de', ze } -> { al', ga'', ze' }
+{ A, B, C } = { A, B, C } % true with no errors: this is a tfc

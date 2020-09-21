@@ -1,0 +1,12 @@
+x := gen *
+f := gen x -> x
+cup := gen f *0 f -> id1 x
+cap := gen id1 x -> f *0 f
+dot := gen id1 x -> id1 x
+counit := gen f -> id1 x
+X := (f *0 cap) *1 (f *0 f *0 cap *0 f) *1 (f *0 f *0 f *0 dot *0 f *0 f) *1 (f *0 f *0 counit *0 f *0 f) *1 (f *0 cup *0 f) *1 cup
+Y := ((f *0 cap) *1 (f *0 f *0 cap *0 f) *1 (f *0 f *0 counit *0 f *0 f) *1 (f *0 cup *0 f) *1 cup) *0 dot
+X = Y % true
+U := cap *1 (f *0 dot *0 f) *1 cup
+V := (cap *1 cup) *0 dot
+U = V % false

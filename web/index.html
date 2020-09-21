@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cateq</title>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+        <link rel="stylesheet" type="text/css" href="cateq.css"/>
+    </head>
+
+    <body>
+        <div id="ccontent">
+            <h1 class="centered">Cateq</h1>
+            <br/>
+            <br/>
+            <p>Cateq is an implementation of the procedure given by Makkai to decide whether two cells of an omega-category induced by a polygraph are equal. You can give it a try directly in your browser. Some explanations on the syntax follow.</p>
+        <div id="term-app">
+        </div>
+        <p>Some explanations on the syntax:</p>
+        <pre class="snippet">
+% A comment start with '%' and stops at the end of the line
+% A 0-cell is defined like this:
+x := gen *
+
+% Several 0-cells can be defined using commas
+y,z := gen *
+
+% An (n+1)-cell between two n-cells is defined as follows
+f := gen x -> y
+
+% As before, we can define several such (n+1)-cells at the same time
+g,h := gen x -> y
+f',g',h' := gen y -> z
+
+% Cells can be composed with *0, *1, etc.
+% Identities are obtained by applying id1, id2, etc.
+% Variables containing a cell can be defined using ':='
+u := f *0 f'
+v := f *0 g'
+v' := id1 x *0 f *0 f'
+
+% We ask whether two n-cells are equal with '='
+u = u  % prints: true
+u = v  % prints: false
+u = v' % prints: true
+
+% Let's add 2-cells
+al := gen f -> g
+be := gen g -> h
+al' := gen f' -> g'
+be' := gen g' -> h'
+
+% Writing formulas with higher cells become quickly tiresome
+(f *0 al') *1 ((al *1 be) *0 g') *1 (h *0 be') = (al *1 be) *0 (al' *1 be')
+
+% cateq understands pasting diagrams
+% pasting diagrams represent cells by the set of the generators "involved" in them
+% cateq deduces how to compose the generators to build the cell
+% pasting diagrams are introduced with '{ ... }'
+{ f, f' } = f *0 f' % prints: true
+
+% Of course, cateq checks that your pasting diagrams is correct
+% It fails otherwise
+X := { f , g } % fails
+Y := { x , g' } % fails
+        </pre>
+
+        <p>A complete example:</p>
+        <pre class="snippet">
+% LICS19 Example
+x,y,z := gen *
+a,b,c := gen x -> y
+d,e,f := gen y -> z
+al,al' := gen a -> b
+be,be' := gen b -> c
+ga,ga' := gen d -> e
+de,de' := gen e -> f
+A := gen al *0 de -> al' *0 de'
+B := gen be *0 ga -> be' *0 ga'
+Aext := ( a *0 ga ) *1 A *1 ( be *0 f )
+Aext' := ( a *0 ga' ) *1 A *1 ( be' *0 f )
+Bext := ( al *0 d ) *1 B *1 ( c *0 de )
+Bext' := ( al' *0 d ) *1 B *1 ( c *0 de' )
+Aext *2 Bext' = Bext *2 Aext' % prints: false
+
+% The same request can be expressed with pasting diagrams
+{ be, A, ga } *2 { al', B, de'} = { al, B, de } *2 { be', A, ga' } % prints: false
+        </pre>
+        </div>
+    </body>
+    <script type="text/javascript" src="cateqweb.js"></script>
+<html>

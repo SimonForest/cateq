@@ -1,0 +1,50 @@
+body
+{
+    font-family:sans-serif;
+    font-size:14pt;
+}
+.centered
+{
+    text-align:center;
+}
+div#ccontent
+{
+    margin-left:20%;
+    margin-right:20%;
+}
+div.term-cont
+{
+    background-color: black;
+    color: #ffcc4d;
+    font-family:monospace;
+    height: 400px;
+    overflow-y: auto;
+    font-weight: bold;
+}
+div.term-line
+{
+    display: flex;
+}
+div.term-prompt
+{
+    display:inline;
+    font-family:inherit;
+    font-size:inherit;
+}
+.term-input
+{
+    flex: 1;
+    border: hidden;
+    padding: 0px;
+    color: inherit;
+    background-color: transparent;
+    font-family:inherit;
+    font-size:inherit;
+    font-weight:inherit;
+    outline: 0;
+}
+.snippet{
+    background-color:whitesmoke;
+    color: #ca7003;
+    overflow:auto;
+}

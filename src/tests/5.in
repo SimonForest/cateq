@@ -1,0 +1,12 @@
+x := gen *
+y := gen *
+z := gen *
+w := gen *
+f := gen x -> y
+g := gen y -> z
+h := gen z -> w
+al := gen f -> f
+be := gen h -> h
+A := gen al -> al
+B := gen be -> be
+(A *0 g *0 be) *2 (al *0 g *0 B) = (al *0 g *0 B) *2 (A *0 g *0 be) % true

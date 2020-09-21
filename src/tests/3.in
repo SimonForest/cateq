@@ -1,0 +1,18 @@
+% LICS19 Example
+x,y,z := gen *
+a,b,c := gen x -> y
+d,e,f := gen y -> z
+al,al' := gen a -> b
+be,be' := gen b -> c
+ga,ga' := gen d -> e
+de,de' := gen e -> f
+A := gen al *0 de -> al' *0 de'
+B := gen be *0 ga -> be' *0 ga'
+Aext := ( a *0 ga ) *1 A *1 ( be *0 f )
+Aext' := ( a *0 ga' ) *1 A *1 ( be' *0 f )
+Bext := ( al *0 d ) *1 B *1 ( c *0 de )
+Bext' := ( al' *0 d ) *1 B *1 ( c *0 de' )
+Aext *2 Bext' = Bext *2 Aext' % prints: false
+
+% The same request can be expressed with pasting diagrams
+{ be, A, ga } *2 { al', B, de'} = { al, B, de } *2 { be', A, ga' }

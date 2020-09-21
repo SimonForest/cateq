@@ -1,0 +1,5 @@
+x := gen *
+f := gen x -> x
+alpha := gen f -> f
+A := gen alpha *0 f *0 alpha -> alpha *0 f *0 alpha
+{ A } = A % error

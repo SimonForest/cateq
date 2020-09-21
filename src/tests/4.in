@@ -1,0 +1,11 @@
+x := gen *
+y := gen *
+z := gen *
+f := gen x -> y
+fp := gen x -> y
+g := gen y -> z
+gp := gen y -> z
+al := gen f -> fp
+be := gen g -> gp
+(al *0 g) *1 (fp *0 be) = (f *0 be) *1 (al *0 gp) % true
+(al *0 g) *1 (fp *0 be) = al *0 be % true

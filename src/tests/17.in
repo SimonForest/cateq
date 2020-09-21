@@ -1,0 +1,3 @@
+x := gen *
+f := gen x -> x
+alpha := gen x -> f % error

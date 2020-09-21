@@ -1,0 +1,14 @@
+% Snail shell example
+w,x,y,z := gen *
+a,a',c := gen x -> y
+d,d' := gen y -> z
+b := gen y -> w
+b' := gen x -> w
+e := gen z -> w
+al1,al1' := gen a -> a'
+al2 := gen { a', b } -> b'
+al3 := gen b' -> { e, d, c }
+al4, al4' := gen d -> d'
+{ al1, al2, al3, al4 } = { al1, al2, al3, al4 }
+A := gen { al1, al4 } -> { al1', al4' }
+B := { A, al2, al3 } % error because not satisfying segment axiom

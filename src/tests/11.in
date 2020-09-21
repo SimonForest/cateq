@@ -1,0 +1,8 @@
+x,y,z := gen *
+a,b,c := gen x -> y
+d,e,f := gen y -> z
+al := gen a -> b
+be := gen b -> c
+ga := gen d -> e
+de := gen e -> f
+( { al, be } *0 { ga, de } ) = ( { al, ga } *1 { be, de } ) % true

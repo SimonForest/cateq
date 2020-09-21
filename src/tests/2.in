@@ -1,0 +1,5 @@
+x := gen *
+f := gen x -> x
+alpha := gen f -> f
+beta := gen f -> f
+alpha *1 beta = alpha *1 beta % true

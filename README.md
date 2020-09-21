@@ -1,11 +1,72 @@
 
-# Install opam
+# Directly try `cateq` from a browser
 
+Once the repository is cloned, just do
+
+``` shell
+firefox web/index.html
+```
+
+in the repo directory.
+
+
+# Compile the sources
+
+## Install `opam`
+
+In order to compile, we need an OCaml compiler and some additional packages. The
+easiest way to install them is using `opam`. The latter can be installed with
+the following commands:
+
+``` shell
 sudo apt update
-sudo apt install opam
+sudo apt install opam m4
 opam init
+```
 
-and press yes
+## Build `cateq`
 
-clone the repo
-git clone ...
+We first install the required OCaml compiler and packages with the following command:
+
+``` shell
+opam install ocaml ocamlbuild menhir
+```
+
+We can now compile `cateq` with the following commands executed in the `src/`
+directory:
+
+``` shell
+eval `opam config env`
+make cateq
+```
+
+
+## Build the javascript code
+
+In order to convert the OCaml code to javascript, we need additional packages
+that we can install with
+
+``` shell
+opam install js_of_ocaml js_of_ocaml-ppx
+```
+
+The javascript code can then be compiled with the following commands executed in
+the `src/` directory:
+
+``` shell
+eval `opam config env`
+make web
+```
+
+The javascript file from the `web/` directory is then updated, and one can use
+it by executing
+
+``` shell
+firefox web/index.html
+```
+
+as above.
+
+# Use `cateq`
+
+For some examples on how to use `cateq`, open `web/index.html` in a browser.

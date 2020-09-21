@@ -742,29 +742,22 @@ let comp_str_p p l r =
   else
     raise @@ Invalid_argument "cells are not composable"
 
-let ctxtcl_src ctxtcl =
-  let Some reps = find_ctxtcl_reps ctxtcl in
-  let rep = List.hd reps in
+(* TODO: finish the following code later *)
+(* let ctxtcl_src ctxtcl =
+ *   let Some reps = find_ctxtcl_reps ctxtcl in
+ *   let rep = List.hd reps in
+ * 
+ * 
+ * let seqcl_src seqcl =
+ *   let Some reps = find_seqcl_reps seqcl in
+ *   let rep = List.hd reps in
+ *   match rep with
+ *   | SeqNull -> raise @@ Invalid_argument "no source for SeqNull"
+ *   | SeqId seqcl' -> seqcl'
+ *   | SeqSeq ctxtcl_list ->
+ *     let first_ctxtcl = List.hd ctxtcl_list in
+ *     ctxtcl_src first_ctxtcl *)
 
-
-let seqcl_src seqcl =
-  let Some reps = find_seqcl_reps seqcl in
-  let rep = List.hd reps in
-  match rep with
-  | SeqNull -> raise @@ Invalid_argument "no source for SeqNull"
-  | SeqId seqcl' -> seqcl'
-  | SeqSeq ctxtcl_list ->
-    let first_ctxtcl = List.hd ctxtcl_list in
-    ctxtcl_src first_ctxtcl
-
-
-let unit seqcl =
-  get_seqcl (SeqId seqcl)
-
-let l_comp 
-
-
-let l_comp
 
 (* SF : earlier attempt follows *)
 

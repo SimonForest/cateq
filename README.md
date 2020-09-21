@@ -69,4 +69,10 @@ as above.
 
 # Use `cateq`
 
+Once `cateq` is built, you can run it from the `src/` directory with:
+
+``` shell
+./cateq
+```
+
 For some examples on how to use `cateq`, open `web/index.html` in a browser.

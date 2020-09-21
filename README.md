@@ -2,7 +2,7 @@
 # Directly try `cateq` from a browser
 
 For now, `cateq` can be tried from a browser
-(here)[http://www.lix.polytechnique.fr/Labo/Simon.Forest/projects/cateq/index.html].
+[here](http://www.lix.polytechnique.fr/Labo/Simon.Forest/projects/cateq/index.html).
 Alternatively, you can launch the same webpage from the repository. Once the
 repository is cloned, just do
 

@@ -1,6 +1,6 @@
 
 `cateq` is a program in OCaml which implements the solution to the word problem
-on strict $\omega$-categories. It is inspired from the article of M. Makkai “The
+on strict omega-categories. It is inspired from the article of M. Makkai “The
 word problem on computads”. A description of the algorithm used by `cateq` can
 be found in S. Forest “Computational Descriptions of Higher Categories” (PhD
 thesis) to appear.

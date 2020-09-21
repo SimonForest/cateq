@@ -1,7 +1,10 @@
 
 # Directly try `cateq` from a browser
 
-Once the repository is cloned, just do
+For now, `cateq` can be tried from a browser
+(here)[http://www.lix.polytechnique.fr/Labo/Simon.Forest/projects/cateq/index.html].
+Alternatively, you can launch the same webpage from the repository. Once the
+repository is cloned, just do
 
 ``` shell
 firefox web/index.html

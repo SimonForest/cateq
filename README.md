@@ -3,7 +3,8 @@
 on strict omega-categories. It is inspired from the article of M. Makkai “The
 word problem on computads”. A description of the algorithm used by `cateq` can
 be found in S. Forest “Computational Descriptions of Higher Categories” (PhD
-thesis) to appear.
+thesis) and
+[here](https://www.i2m.univ-amu.fr/perso/simon.forest/projects/cateq/index.html).
 
 # Directly try `cateq` from a browser
 
